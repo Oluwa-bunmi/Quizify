@@ -108,6 +108,7 @@ let score = 0;
 let timeRemaining = 1200;
 function startQuiz() {
   currentQuestionIndex = 0;
+  timeRemaining = 1200;
   score = 0;
   nextButton.innerHTML = "Next";
   showQuestion();
