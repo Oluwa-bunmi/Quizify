@@ -21,6 +21,11 @@ body {
 #timer{
     display: flex;
     justify-content: end;
+    align-items: center;
+    gap: 7px;
+}
+#timer img{
+  width: 4%;
 }
 
  h1 {

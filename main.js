@@ -97,6 +97,7 @@ const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const timerElement = document.getElementById("time");
 const startBtn = document.getElementById("start-btn");
+let timerInterval;
 startBtn.addEventListener("click", () => {
   startQuiz();
   document.querySelector(".container").style.display = "block";
@@ -147,6 +148,7 @@ function showQuestion() {
 }
 function resetState() {
   nextButton.style.display = "none";
+  document.querySelector("#timer").style.display = "flex";
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
   }
@@ -180,8 +182,8 @@ function handleNextButton() {
   if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
-   
     showScore();
+    clearInterval(timerInterval);
   }
 }
 nextButton.addEventListener("click", () => {
